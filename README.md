@@ -1,4 +1,4 @@
-# ReverseDNSGeolocation
+# Reverse DNS Geolocation
 Reverse DNS Geolocation - Determine location of routers from their reverse DNS hostnames
 
 This code is part of a research project and is provided as-is. It is made public as a part of a research paper submission.
