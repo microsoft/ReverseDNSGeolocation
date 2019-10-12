@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{42B7E42D-2E02-4F93-AD4E-D972F3BB7A01}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReverseDNSGeolocation</RootNamespace>
+    <AssemblyName>ReverseDNSGeolocation</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Louw.PublicSuffix, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Louw.PublicSuffix.1.2.2\lib\net452\Louw.PublicSuffix.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZeroFormatter, Version=1.6.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZeroFormatter.1.6.4\lib\net45\ZeroFormatter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ZeroFormatter.Interfaces, Version=1.6.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZeroFormatter.Interfaces.1.6.4\lib\net45\ZeroFormatter.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Features\CityFeatures\AddOnFeatures\AddOnCityFeaturesGenerator.cs" />
+    <Compile Include="Features\CityFeatures\AddOnFeatures\DomainNameAddOnFeaturesGenerator.cs" />
+    <Compile Include="Features\CityFeatures\AddOnFeatures\FirstLettersAdmin1AddOnFeaturesGenerator.cs" />
+    <Compile Include="Features\CityFeatures\AddOnFeatures\ExactCountryAddOnFeaturesGenerator.cs" />
+    <Compile Include="Features\CityFeatures\AddOnFeatures\ExactAdmin1AddOnFeaturesGenerator.cs" />
+    <Compile Include="Features\CityFeatures\AddOnFeatures\TLDAddOnFeaturesGenerator.cs" />
+    <Compile Include="Features\CityFeatures\AlternateCityAbbreviationsFeaturesGenerator.cs" />
+    <Compile Include="Features\CityFeatures\CityAdmin1FeaturesGenerator.cs" />
+    <Compile Include="Features\CityFeatures\CityCountryFeaturesGenerator.cs" />
+    <Compile Include="Features\CityFeatures\AlternateCityFeaturesGenerator.cs" />
+    <Compile Include="Features\CityFeatures\CityAbbreviationsFeaturesGenerator.cs" />
+    <Compile Include="Features\CityFeatures\CityFeaturesAggregator.cs" />
+    <Compile Include="Features\CityFeatures\AirportCodeFeaturesGenerator.cs" />
+    <Compile Include="Features\CityFeatures\ExactUNLOCODEFeaturesGenerator.cs" />
+    <Compile Include="Features\CityFeatures\ExactCLLIFeaturesGenerator.cs" />
+    <Compile Include="Features\CityFeatures\FirstLettersCityFeaturesGenerator.cs" />
+    <Compile Include="Features\CityFeatures\CityFeaturesGenerator.cs" />
+    <Compile Include="Features\CityFeatures\NoVowelsCityFeaturesGenerator.cs" />
+    <Compile Include="Features\CompoundName.cs" />
+    <Compile Include="Features\EntitiesToFeatures.cs" />
+    <Compile Include="Features\CityFeatures\ExactCityFeaturesGenerator.cs" />
+    <Compile Include="Features\CityFeatures\CityFeatureType.cs" />
+    <Compile Include="Features\FeatureGranularity.cs" />
+    <Compile Include="Features\Features.cs" />
+    <Compile Include="Features\FeatureGranularities.cs" />
+    <Compile Include="Features\FeaturesConfig.cs" />
+    <Compile Include="Features\FeatureUtils.cs" />
+    <Compile Include="Features\FeatureValueTypes.cs" />
+    <Compile Include="Features\ReflectionUtils.cs" />
+    <Compile Include="GeonamesParsers\AlternateNames\GeonamesAlternateNameEntity.cs" />
+    <Compile Include="GeonamesParsers\AlternateNames\GeonamesAlternateNamesParser.cs" />
+    <Compile Include="GeonamesParsers\CLLI\CLLICodesParser.cs" />
+    <Compile Include="GeonamesParsers\CLLI\CLLIEntity.cs" />
+    <Compile Include="GeonamesParsers\Countries\GeonamesCountriesParser.cs" />
+    <Compile Include="GeonamesParsers\UNLOCODE\UNLOCODECodesParser.cs" />
+    <Compile Include="GeonamesParsers\UNLOCODE\UNLOCODEEntity.cs" />
+    <Compile Include="HostnameSplitter\HostnameSplitter.cs" />
+    <Compile Include="HostnameSplitter\HostnameSplitterResult.cs" />
+    <Compile Include="GeonamesParsers\AdminEntities\GeonamesAdminEntity.cs" />
+    <Compile Include="GeonamesParsers\AdminEntities\GeonamesAdminParser.cs" />
+    <Compile Include="GeonamesParsers\Cities\GeonamesCityEntity.cs" />
+    <Compile Include="GeonamesParsers\Cities\GeonamesCitiesParser.cs" />
+    <Compile Include="GeonamesParsers\Countries\GeonamesCountryEntity.cs" />
+    <Compile Include="HostnameSplitter\PublicSuffixMatcher.cs" />
+    <Compile Include="HostnameSplitter\SubdomainPart.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\ZeroFormatter.Analyzer.1.1.1\analyzers\dotnet\cs\ZeroFormatterAnalyzer.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
