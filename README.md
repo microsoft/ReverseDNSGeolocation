@@ -1,5 +1,5 @@
 # Reverse DNS Geolocation
-Reverse DNS Geolocation - Determine location of routers from their reverse DNS hostnames
+Reverse DNS Geolocation - Determine location of hostnames from their reverse DNS entries.
 
 TODO: Documentation is pending research paper submission.
 
